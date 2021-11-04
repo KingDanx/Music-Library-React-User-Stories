@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
 import "./App.css";
+import "./components/MusicTable/MusicTable";
+import "./components/NavigationBar/NavigationBar";
+import "./components//SearchBar/SearchBar";
+import NavigationBar from './components/NavigationBar/NavigationBar';
+
 
 class App extends Component {
   constructor(props) {
@@ -9,7 +14,7 @@ class App extends Component {
   render() { 
     return ( 
       <div>
-        hi
+        <NavigationBar />
       </div>
      );
   }
