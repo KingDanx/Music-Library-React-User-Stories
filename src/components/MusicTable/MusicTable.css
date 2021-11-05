@@ -16,11 +16,14 @@ ol, ul, dl {
     backdrop-filter: blur(6px) brightness(3);
 }
 
-
-
-
 .top-margin{
     
     margin-top: 2rem;
     
+}
+
+.btn:hover{
+    color: #0b2540;
+    background-color: #9c913f;
+    border-color: #9c913f;
 }
