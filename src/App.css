@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Rajdhani:wght@700&display=swap');
+
 .App {
   text-align: center;
   background-image: url("./images/michael-dziedzic-bhFkSyBUqAY-unsplash.jpg");
@@ -27,6 +29,37 @@
 
 .App-link {
   color: #61dafb;
+}
+
+.App-grid{
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+}
+
+.App-middle-fr{
+  display: grid;
+  grid-template-rows: 2fr 1fr;
+}
+
+.App-album-circle{
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0);
+  -webkit-backdrop-filter: blur(21px) brightness(1.1);
+  backdrop-filter: blur(21px) brightness(1.4);
+  border-width: 1rem; 
+  border-color: darkcyan;
+  width: 578px;
+  height: 621px;
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-top: 3%; 
+  padding-top: 75px; 
+  text-align: -webkit-center;
+  color: azure;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1.5rem;
+  color: #9F9F9F;
+
 }
 
 @keyframes App-logo-spin {

@@ -33,7 +33,15 @@ class App extends Component {
     return ( 
       <div>
         <NavigationBar />
-        <MusicTable songs={this.state.songs}/>
+        <div className="App-grid">
+          <MusicTable songs={this.state.songs}/>
+          <div className="App-middle-fr">
+            <div className="App-album-circle"><p>Song Title</p><p>Artist</p></div>
+            <div>hillo</div>
+          </div>
+            
+        </div>
+        
       </div>
      );
   }

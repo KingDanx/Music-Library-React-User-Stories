@@ -9,7 +9,7 @@ const NavigationBar = () => {
               <a className="navbar-brand" href="https://devcodecamp.com/" target="_blank">
                 <img src={logo} width="30" height="30" className="d-inline-block align-top logo" alt="devCodeCamp logo"/>
               </a>  
-              <span className="span-flex">dCC Music Libray</span>
+              <span className="span-flex">dCC Music</span>
         <form className="form-inline my-2 my-lg-0 display-flex">
           <div className="dropdown">
             <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

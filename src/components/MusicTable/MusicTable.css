@@ -12,7 +12,7 @@ ol, ul, dl {
     background-color: #0d6dfd00;
     border-color: #0d6dfd00;
     display: table;
-    -webkit-backdrop-filter: blur(6px) grayscale(3);
+    -webkit-backdrop-filter: blur(6px) brightness(3);
     backdrop-filter: blur(6px) brightness(3);
 }
 
