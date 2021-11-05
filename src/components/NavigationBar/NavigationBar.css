@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Rajdhani:wght@700&display=swap');
+
+.outline{
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.5rem;
+    color: #9F9F9F;
+   
+    
+    -webkit-backdrop-filter: blur(6px) grayscale(3);
+    backdrop-filter: blur(21px) brightness(2.1);
+    border: #9F9F9F;
+    border-width: 5rem;
+}
+
+.bg-light {
+    --bs-bg-opacity: 1;
+    background-color: transparent!important;
+}
+
+.logo{
+    margin-left: 1rem;
+}
+
+.text{
+    filter: blur(0px);
+}
+
+.display-flex{
+    display: flex;
+}
+
+.span-flex{
+    flex: auto;
+}
+
+

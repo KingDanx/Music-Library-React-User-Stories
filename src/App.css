@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background-image: url("./images/michael-dziedzic-bhFkSyBUqAY-unsplash.jpg");
 }
 
 .App-logo {
@@ -36,3 +37,5 @@
     transform: rotate(360deg);
   }
 }
+
+

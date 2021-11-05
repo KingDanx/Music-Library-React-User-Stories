@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import "./App.css";
 import "./components/MusicTable/MusicTable";
 import "./components/NavigationBar/NavigationBar";
 import "./components//SearchBar/SearchBar";
 import NavigationBar from './components/NavigationBar/NavigationBar';
 import axios from 'axios';
 import MusicTable from './components/MusicTable/MusicTable';
+import "./App.css";
+
 
 
 class App extends Component {
