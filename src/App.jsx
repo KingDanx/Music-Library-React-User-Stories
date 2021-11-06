@@ -8,6 +8,8 @@ import MusicTable from './components/MusicTable/MusicTable';
 import "./App.css";
 import MusicControls from './components/MusicControls/MusicControls';
 import AlbumCover from './components/AlbumCover/AlbumCover';
+import SearchBar from './components//SearchBar/SearchBar';
+import SearchBox from './components/SearchBox/SearchBox';
 
 
 
@@ -27,7 +29,8 @@ class App extends Component {
     let response = await axios.get("http://www.devcodecampmusiclibrary.com/api/music");
     console.log(response.data);
     this.setState({
-      songs: response.data
+      songs: response.data,
+      currentSong: {}
     });
   }
 
@@ -41,6 +44,7 @@ class App extends Component {
             <AlbumCover/>
             <MusicControls/>
           </div>
+          <SearchBox/>
         </div>
       </div>
      );
