@@ -1,8 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Rajdhani:wght@700&display=swap');
 
+p{
+  background-color: #423d1594;
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-top: 0%;
+  margin-bottom: 0%;
+  border-bottom-left-radius: 500px;
+  border-bottom-right-radius: 500px;
+  border-top-right-radius: 500px;
+  border-top-left-radius: 500px;
+  align-content: center;
+
+}
+
 .App {
   text-align: center;
   background-image: url("./images/michael-dziedzic-bhFkSyBUqAY-unsplash.jpg");
+  opacity: .1;
 }
 
 .App-logo {
@@ -46,9 +61,7 @@
   background-color: rgba(255, 255, 255, 0);
   -webkit-backdrop-filter: blur(21px) brightness(1.1);
   backdrop-filter: blur(21px) brightness(1.4);
-  border-width: 1rem; 
-  border-color: darkcyan;
-  width: 578px;
+  width: 621px;
   height: 621px;
   margin-left: 15%;
   margin-right: 15%;
@@ -59,7 +72,52 @@
   font-family: 'Rajdhani', sans-serif;
   font-size: 1.5rem;
   color: #9F9F9F;
+}
 
+.App-song-name{
+  font-size: 2rem;
+}
+
+.App-little-circle{
+  border-radius: 50%;
+  width: 66px;
+  height: 66px;
+  background-color: #9f9f9f9d;
+  margin-top: 110px;
+  margin-bottom: 110px;
+}
+
+.App-controls {
+  border-radius: 500px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 621px;
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-bottom: 200px;
+  background-color: rgba(255, 255, 255, 0);
+  -webkit-backdrop-filter: blur(21px) brightness(1.1);
+  backdrop-filter: blur(21px) brightness(1.4);
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  justify-items: center;
+}
+
+.arrow-right {
+  width: 0; 
+  height: 0; 
+  border-top: 30px solid transparent;
+  border-bottom: 30px solid transparent; 
+  border-left: 53px solid #f4f1369a;
+}
+
+.App-buttons{
+  border: none;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0);
+  -webkit-backdrop-filter: blur(21px) brightness(1.1);
+  backdrop-filter: blur(21px) brightness(1.4);
 }
 
 @keyframes App-logo-spin {

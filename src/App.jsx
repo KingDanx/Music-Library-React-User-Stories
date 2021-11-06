@@ -36,8 +36,18 @@ class App extends Component {
         <div className="App-grid">
           <MusicTable songs={this.state.songs}/>
           <div className="App-middle-fr">
-            <div className="App-album-circle"><p>Song Title</p><p>Artist</p></div>
-            <div>hillo</div>
+            <div className="App-album-circle">
+              <p className="App-song-name">Song Title</p>
+              <p>Artist</p>
+              <div className="App-little-circle"></div>
+              <p>Album</p>
+              <p>Genre</p>
+            </div>
+            <div className="App-controls">
+              <div></div>
+              <button className="App-buttons"><div className="arrow-right"></div></button>
+              <div></div>
+            </div>
           </div>
             
         </div>
