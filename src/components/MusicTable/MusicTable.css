@@ -2,7 +2,7 @@ ol, ul, dl {
     margin-top: 0rem;
     margin-bottom: 1rem;
     -webkit-backdrop-filter: blur(21px) brightness(1.1);
-    backdrop-filter: blur(21px) brightness(1.1);
+    backdrop-filter: blur(21px) brightness(.7);
     display: table-row;
 }
 
