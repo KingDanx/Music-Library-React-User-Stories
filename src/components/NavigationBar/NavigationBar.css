@@ -10,6 +10,38 @@
     border-width: 5rem;
 }
 
+.search-select {
+    display: block;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #6e7778;
+    background-color: #9c9b34;
+    background-clip: padding-box;
+    border-radius: 0.25rem;
+    margin-right: 4px;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #9c9b34;
+    border-color: #9c9b34;
+    background-clip: padding-box;
+    -webkit-appearance: none;
+    appearance: none;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+
 .bg-light {
     --bs-bg-opacity: 1;
     background-color: transparent!important;
