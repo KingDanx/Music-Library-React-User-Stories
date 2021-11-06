@@ -6,6 +6,8 @@ import NavigationBar from './components/NavigationBar/NavigationBar';
 import axios from 'axios';
 import MusicTable from './components/MusicTable/MusicTable';
 import "./App.css";
+import MusicControls from './components/MusicControls/MusicControls';
+import AlbumCover from './components/AlbumCover/AlbumCover';
 
 
 
@@ -36,28 +38,10 @@ class App extends Component {
         <div className="App-grid">
           <MusicTable songs={this.state.songs}/>
           <div className="App-middle-fr">
-            <div className="App-album-circle">
-              <p className="App-song-name">Song Title</p>
-              <p>Artist</p>
-              <div className="App-little-circle"></div>
-              <p>Album</p>
-              <p>Genre</p>
-            </div>
-            <div className="App-controls">
-              <button className="App-buttons">
-                <div className="fast-forward-grid"><div className="rr-tri"></div><div className="rr-tri"></div></div>
-              </button>
-              <button className="App-buttons">
-                <div className="arrow-right"></div>
-              </button>
-              <button className="App-buttons">
-                <div className="fast-forward-grid"><div className="fast-forward-tri"></div><div className="fast-forward-tri"></div></div>
-              </button>
-            </div>
+            <AlbumCover/>
+            <MusicControls/>
           </div>
-            
         </div>
-        
       </div>
      );
   }

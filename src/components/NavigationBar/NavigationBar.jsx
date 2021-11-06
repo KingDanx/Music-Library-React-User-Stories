@@ -11,7 +11,6 @@ const NavigationBar = () => {
               </a>  
               <span className="span-flex">dCC Music</span>
         <form className="form-inline my-2 my-lg-0 display-flex">
-          <div className="dropdown">
             <div>
               <select className="search-select">
                 <option value="0">Search Type</option>
@@ -21,8 +20,8 @@ const NavigationBar = () => {
                 <option value="4">Genre</option>
               </select>
             </div>
-          </div>
-          <input className="form-control mr-sm-2 ib" type="search" placeholder="Search" aria-label="Search"/>
+          
+          <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"/>
         </form>
           
               

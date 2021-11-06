@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Rajdhani:wght@700&display=swap');
 
+input{
+    background-color: #9c9b34;
+}
+
 .outline{
     font-family: 'Rajdhani', sans-serif;
     font-size: 1.5rem;
@@ -31,7 +35,7 @@
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
-    color: #212529;
+    color: #6e7778;
     background-color: #9c9b34;
     border-color: #9c9b34;
     background-clip: padding-box;
