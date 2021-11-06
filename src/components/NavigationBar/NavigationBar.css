@@ -22,6 +22,7 @@ input{
     line-height: 1.5;
     color: #6e7778;
     background-color: #9c9b34;
+    border-color: #9c9b34;
     background-clip: padding-box;
     border-radius: 0.25rem;
     margin-right: 4px;
