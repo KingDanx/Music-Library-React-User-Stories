@@ -4,10 +4,8 @@
     font-family: 'Rajdhani', sans-serif;
     font-size: 1.5rem;
     color: #9F9F9F;
-   
-    
-    -webkit-backdrop-filter: blur(6px) grayscale(3);
-    backdrop-filter: blur(21px) brightness(2.1);
+    -webkit-backdrop-filter: blur(21px) brightness(1.1);
+  backdrop-filter: blur(21px) brightness(1.4);
     border: #9F9F9F;
     border-width: 5rem;
 }
