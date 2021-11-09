@@ -1,5 +1,9 @@
 
-
+ul{
+    list-style-type: none;
+    color: #9f9f9f;
+    display: block
+}
 .search-box {
     margin-top: 0rem;
     margin-bottom: 1rem;

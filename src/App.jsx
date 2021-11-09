@@ -23,6 +23,7 @@ class App extends Component {
         genre: "Folk Rock",
         releaseDate: "12/03/1965",
       },
+      userInput:""
     };
     this.songs = [this.state.songs];
   }
@@ -69,14 +70,31 @@ class App extends Component {
   handleChange = (event) => {
     console.log(event);
     this.setState({
-      [event.target.name]: event.target.value,
+      userInput : event.target.value,
     });
   };
+
+  songFilter = (input) => {
+    this.state.songs.filter((el) => {
+      if(el.title.toLowerCase().includes(input.toLowerCase())){
+        return true;
+      }
+      if(el.artist.toLowerCase().includes(input.toLowerCase())){
+        return true;
+      }
+      if(el.album.toLowerCase().includes(input.toLowerCase())){
+        return true;
+      }
+      if(el.genre.toLowerCase().includes(input.toLowerCase())){
+        return true;
+      }
+    });
+  }
 
   render() {
     return (
       <div>
-        <NavigationBar songs={this.state.songs} />
+        <NavigationBar songs={this.state.songs} handleChange={this.handleChange} songFilter={this.songFilter} userInput={this.state.userInput}/>
         <div className="App-grid">
           <MusicTable songs={this.state.songs} />
           <div className="App-middle-fr">
@@ -87,7 +105,7 @@ class App extends Component {
               handleChange={this.handleChange}
             />
           </div>
-          <SearchBox />
+          <SearchBox userInput={this.state.userInput} songs={this.state.songs}/>
         </div>
       </div>
     );

@@ -1,36 +1,26 @@
-import React, { Component } from 'react';
+import React from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import "./SearchBox.css";
 
-class SearchBox extends Component {
-    constructor(props) {
-        super(props);
-        this.state = { 
-            title: "",
-            aritist:"",
-            album:"",
-            genre:""
-         }
-    }
+const SearchBox = (props) => {
+  return (
+    <div>
+      {" "}
+      {props.userInput === "" ? null : (
+        <ul>
+          {props.songs.map((el, index) =>
+            el.title.includes(props.userInput) ||
+            el.album.includes(props.userInput) ||
+            el.artist.includes(props.userInput) ||
+            el.genre.includes(props.userInput) ||
+            el.releaseDate.includes(props.userInput) ? (
+              <li className="search-box btn btn-primary btn:hover" key={index}>{el.title} - {el.artist}</li>
+            ) : null
+          )}
+        </ul>
+      )}
+    </div>
+  );
+};
 
-
-    render() { 
-        return ( 
-        <form className="search-box" onClick={this.handleSubbmit}>
-            <h5 className="btn-primary btn">testing 123123123sedrlfkjalsdf</h5>
-            <h5 className="btn-primary btn">testing 123123123sedrlfkjalsdf</h5>
-            <h5 className="btn-primary btn">testing 123123123sedrlfkjalsdf</h5>
-            <h5 className="btn-primary btn">testing 123123123sedrlfkjalsdf</h5>
-            <h5 className="btn-primary btn">testing 123123123sedrlfkjalsdf</h5>
-            <h5 className="btn-primary btn">testing 123123123sedrlfkjalsdf</h5>
-            <h5 className="btn-primary btn">testing 123123123sedrlfkjalsdf</h5>
-            <h5 className="btn-primary btn">testing 123123123sedrlfkjalsdf</h5>
-            <h5 className="btn-primary btn">testing 123123123sedrlfkjalsdf</h5>
-            <h5 className="btn-primary btn">testing 123123123sedrlfkjalsdf</h5>
-            <h5 className="btn-primary btn">testing 123123123sedrlfkjalsdf</h5>
-        </form>
-        );
-    }
-}
- 
 export default SearchBox;
