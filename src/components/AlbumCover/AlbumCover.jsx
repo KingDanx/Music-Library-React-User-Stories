@@ -2,15 +2,15 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import "../../../src/App.css";
 
-const AlbumCover = () => {
+const AlbumCover = ({currentSong}) => {
     return ( 
         <div>
             <div className="App-album-circle">
-                <p className="App-song-name">Song Title</p>
-                <p>Artist</p>
+                <p className="App-song-name">{currentSong.title}</p>
+                <p>{currentSong.artist}</p>
                 <div className="App-little-circle"></div>
-                <p>Album</p>
-                <p>Genre</p>
+                <p>{currentSong.album}</p>
+                <p>{currentSong.genre}</p>
             </div>
         </div>
      );

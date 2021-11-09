@@ -1,11 +1,22 @@
-import React from "react";
-import logo from "../../images/dcc-logo.png";
+import React, { Component } from 'react';
 import "bootstrap/dist/css/bootstrap.css";
 import "./SearchBox.css";
 
-const SearchBox = () => {
-    return ( 
-        <div className="search-box">
+class SearchBox extends Component {
+    constructor(props) {
+        super(props);
+        this.state = { 
+            title: "",
+            aritist:"",
+            album:"",
+            genre:""
+         }
+    }
+
+
+    render() { 
+        return ( 
+        <form className="search-box" onClick={this.handleSubbmit}>
             <h5 className="btn-primary btn">testing 123123123sedrlfkjalsdf</h5>
             <h5 className="btn-primary btn">testing 123123123sedrlfkjalsdf</h5>
             <h5 className="btn-primary btn">testing 123123123sedrlfkjalsdf</h5>
@@ -17,8 +28,9 @@ const SearchBox = () => {
             <h5 className="btn-primary btn">testing 123123123sedrlfkjalsdf</h5>
             <h5 className="btn-primary btn">testing 123123123sedrlfkjalsdf</h5>
             <h5 className="btn-primary btn">testing 123123123sedrlfkjalsdf</h5>
-        </div>
-     );
+        </form>
+        );
+    }
 }
  
 export default SearchBox;
