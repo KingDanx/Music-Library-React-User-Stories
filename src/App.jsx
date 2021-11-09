@@ -74,22 +74,7 @@ class App extends Component {
     });
   };
 
-  songFilter = (input) => {
-    this.state.songs.filter((el) => {
-      if(el.title.toLowerCase().includes(input.toLowerCase())){
-        return true;
-      }
-      if(el.artist.toLowerCase().includes(input.toLowerCase())){
-        return true;
-      }
-      if(el.album.toLowerCase().includes(input.toLowerCase())){
-        return true;
-      }
-      if(el.genre.toLowerCase().includes(input.toLowerCase())){
-        return true;
-      }
-    });
-  }
+
 
   render() {
     return (
@@ -105,7 +90,7 @@ class App extends Component {
               handleChange={this.handleChange}
             />
           </div>
-          <SearchBox userInput={this.state.userInput} songs={this.state.songs}/>
+          <SearchBox userInput={this.state.userInput} songs={this.state.songs} makeCurrentSong={this.makeCurrentSong}/>
         </div>
       </div>
     );

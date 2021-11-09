@@ -4,8 +4,6 @@ import "bootstrap/dist/css/bootstrap.css";
 import "./NavigationBar.css";
 
 const NavigationBar = (props) => {
-  let fileredSongs = props.songFilter("dr");
-  console.log(fileredSongs);
   return ( 
     <nav className="navbar outline navbar-expand-lg navbar-light bg-light">
     <a className="navbar-brand" href="https://devcodecamp.com/" target="_blank">

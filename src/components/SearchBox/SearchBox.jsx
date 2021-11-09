@@ -9,10 +9,10 @@ const SearchBox = (props) => {
       {props.userInput === "" ? null : (
         <ul>
           {props.songs.map((el, index) =>
-            el.title.includes(props.userInput) ||
-            el.album.includes(props.userInput) ||
-            el.artist.includes(props.userInput) ||
-            el.genre.includes(props.userInput) ||
+            el.title.toLowerCase().includes(props.userInput.toLowerCase()) ||
+            el.album.toLowerCase().includes(props.userInput.toLowerCase()) ||
+            el.artist.toLowerCase().includes(props.userInput.toLowerCase()) ||
+            el.genre.toLowerCase().includes(props.userInput.toLowerCase()) ||
             el.releaseDate.includes(props.userInput) ? (
               <li className="search-box btn btn-primary btn:hover" key={index}>{el.title} - {el.artist}</li>
             ) : null
