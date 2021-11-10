@@ -34,7 +34,28 @@ class App extends Component {
 
   async getAllSongs() {
     let response = await axios.get(
-      "http://www.devcodecampmusiclibrary.com/api/music"
+      "http://localhost:5000/api/songs"
+    );
+    console.log(response.data);
+    this.setState({
+      songs: response.data,
+    });
+  }
+  
+ 
+  async getASongs(id) {
+    let response = await axios.get(
+      `http://localhost:5000/api/songs/${id}`
+    );
+    console.log(response.data);
+    this.setState({
+      currentSong: response.data,
+    });
+  }
+
+  async createASongs() {
+    let response = await axios.post(
+      "http://localhost:5000/api/songs"
     );
     console.log(response.data);
     this.setState({
