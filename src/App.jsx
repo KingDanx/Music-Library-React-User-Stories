@@ -12,6 +12,7 @@ import SearchBox from "./components/SearchBox/SearchBox";
 class App extends Component {
   constructor(props) {
     super(props);
+    this.getASong = this.getASong.bind(this);
     this.state = {
       songs: [],
       trackNumber: 0,
@@ -30,6 +31,7 @@ class App extends Component {
   componentDidMount() {
     this.getAllSongs();
   }
+
 
   getASongHandler(id){
     this.getASong(id);
@@ -50,7 +52,6 @@ class App extends Component {
       `http://localhost:5000/api/songs/${id}`
     );
     console.log(response.data);
-    debugger
     this.setState({
       currentSong: response.data,
     });
@@ -87,7 +88,7 @@ class App extends Component {
   }
 
   goToNextTrack = () => {
-    let tempTrackNumber = this.state.trackNumber;
+    let tempTrackNumber = this.state.currentSong.id - 1;
     tempTrackNumber++;
     if (tempTrackNumber === this.state.songs.length) {
       tempTrackNumber = 0;
@@ -100,7 +101,7 @@ class App extends Component {
   };
 
   goToPreviousTrack = () => {
-    let tempTrackNumber = this.state.trackNumber;
+    let tempTrackNumber = this.state.currentSong.id -1;
     tempTrackNumber--;
     if (tempTrackNumber < 0) {
       tempTrackNumber = this.state.songs.length - 1;
@@ -124,7 +125,7 @@ class App extends Component {
       <div>
         <NavigationBar songs={this.state.songs} handleChange={this.handleChange} songFilter={this.songFilter} userInput={this.state.userInput}/>
         <div className="App-grid">
-          <MusicTable songs={this.state.songs} getASongHandler={this.getASongHandler}/>
+          <MusicTable songs={this.state.songs} getASong={this.getASong}/>
           <div className="App-middle-fr">
             <AlbumCover currentSong={this.state.currentSong} />
             <MusicControls
@@ -132,7 +133,7 @@ class App extends Component {
               goToPreviousTrack={this.goToPreviousTrack}
             />
           </div>
-          <SearchBox userInput={this.state.userInput} songs={this.state.songs}/>
+          <SearchBox userInput={this.state.userInput} songs={this.state.songs} getASong={this.getASong}/>
         </div>
       </div>
     );
