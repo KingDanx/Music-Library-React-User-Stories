@@ -15,7 +15,6 @@ class App extends Component {
     this.getASong = this.getASong.bind(this);
     this.state = {
       songs: [],
-      trackNumber: 0,
       currentSong: {
         id: 1,
         title: "Drive My Car",
@@ -95,7 +94,6 @@ class App extends Component {
     }
 
     this.setState({
-      trackNumber: tempTrackNumber,
       currentSong: this.state.songs[tempTrackNumber],
     });
   };
@@ -107,7 +105,6 @@ class App extends Component {
       tempTrackNumber = this.state.songs.length - 1;
     }
     this.setState({
-      trackNumber: tempTrackNumber,
       currentSong: this.state.songs[tempTrackNumber],
     });
   };
