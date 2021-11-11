@@ -58,6 +58,8 @@ p{
 
 .App-album-circle{
   border-radius: 50%;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
   background-color: rgba(255, 255, 255, 0);
   -webkit-backdrop-filter: blur(21px) brightness(1.1);
   backdrop-filter: blur(21px) brightness(1);
@@ -74,6 +76,12 @@ p{
   color: #9F9F9F;
 }
 
+.App-album-middle{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+}
+
 .App-song-name{
   font-size: 2rem;
 }
@@ -83,8 +91,7 @@ p{
   width: 66px;
   height: 66px;
   background-color: #9f9f9f9d;
-  margin-top: 110px;
-  margin-bottom: 110px;
+  margin-top: 13px;
 }
 
 .App-controls {

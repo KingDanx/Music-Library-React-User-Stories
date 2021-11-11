@@ -6,11 +6,24 @@ const AlbumCover = ({currentSong}) => {
     return ( 
         <div>
             <div className="App-album-circle">
-                <p className="App-song-name">{currentSong.title}</p>
-                <p>{currentSong.artist}</p>
-                <div className="App-little-circle"></div>
-                <p>{currentSong.album}</p>
-                <p>{currentSong.genre}</p>
+                <div>
+                    <p className="App-song-name">{currentSong.title}</p>
+                    <p>{currentSong.artist}</p>
+                </div>
+                
+                <div className="App-album-middle">
+                    <div>-</div>
+                    <div className="App-little-circle"></div>
+                    <div>+</div>
+                </div>
+                
+                
+                <div>
+                    <p>{currentSong.album}</p>
+                    <p>{currentSong.genre}</p>
+                    <p>{currentSong.releaseDate}</p>
+                </div>
+                
             </div>
         </div>
      );
