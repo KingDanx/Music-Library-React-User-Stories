@@ -31,11 +31,6 @@ class App extends Component {
     this.getAllSongs();
   }
 
-
-  getASongHandler(id){
-    this.getASong(id);
-  }
-
   async getAllSongs() {
     let response = await axios.get(
       "http://localhost:5000/api/songs"
