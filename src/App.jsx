@@ -25,11 +25,14 @@ class App extends Component {
       },
       userInput:""
     };
-    this.songs = [this.state.songs];
   }
 
   componentDidMount() {
     this.getAllSongs();
+  }
+
+  getASongHandler(id){
+    this.getASong(id);
   }
 
   async getAllSongs() {
@@ -42,9 +45,19 @@ class App extends Component {
     });
   }
   
- 
-  async getASongs(id) {
+  async getASong(id) {
     let response = await axios.get(
+      `http://localhost:5000/api/songs/${id}`
+    );
+    console.log(response.data);
+    debugger
+    this.setState({
+      currentSong: response.data,
+    });
+  }
+  
+  async editASong(id) {
+    let response = await axios.put(
       `http://localhost:5000/api/songs/${id}`
     );
     console.log(response.data);
@@ -53,7 +66,17 @@ class App extends Component {
     });
   }
 
-  async createASongs() {
+  async deleteASong(id) {
+    let response = await axios.delete(
+      `http://localhost:5000/api/songs/${id}`
+    );
+    console.log(response.data);
+    this.setState({
+      songs: response.data,
+    });
+  }
+
+  async createASong() {
     let response = await axios.post(
       "http://localhost:5000/api/songs"
     );
@@ -96,22 +119,20 @@ class App extends Component {
   };
 
 
-
   render() {
     return (
       <div>
         <NavigationBar songs={this.state.songs} handleChange={this.handleChange} songFilter={this.songFilter} userInput={this.state.userInput}/>
         <div className="App-grid">
-          <MusicTable songs={this.state.songs} />
+          <MusicTable songs={this.state.songs} getASongHandler={this.getASongHandler}/>
           <div className="App-middle-fr">
             <AlbumCover currentSong={this.state.currentSong} />
             <MusicControls
               goToNextTrack={this.goToNextTrack}
               goToPreviousTrack={this.goToPreviousTrack}
-              handleChange={this.handleChange}
             />
           </div>
-          <SearchBox userInput={this.state.userInput} songs={this.state.songs} makeCurrentSong={this.makeCurrentSong}/>
+          <SearchBox userInput={this.state.userInput} songs={this.state.songs}/>
         </div>
       </div>
     );
