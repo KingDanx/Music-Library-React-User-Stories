@@ -13,15 +13,15 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.getASong = this.getASong.bind(this);
+    this.deleteASong = this.deleteASong.bind(this);
     this.state = {
       songs: [],
       currentSong: {
-        id: 1,
-        title: "Drive My Car",
-        album: "Rubber Soul",
-        artist: "The Beatles",
-        genre: "Folk Rock",
-        releaseDate: "12/03/1965",
+        title: "Title",
+        album: "Album",
+        artist: "Artist",
+        genre: "Genre",
+        releaseDate: "Release Date",
       },
       userInput:""
     };
@@ -61,14 +61,25 @@ class App extends Component {
     });
   }
 
-  async deleteASong(id) {
+  async deleteASong() {
     let response = await axios.delete(
-      `http://localhost:5000/api/songs/${id}`
+      `http://localhost:5000/api/songs/${this.state.currentSong.id}`
     );
     console.log(response.data);
-    this.setState({
-      songs: response.data,
-    });
+    if((this.state.currentSong.id - 2)  < 0){
+      this.setState({
+        songs: response.data,
+        currentSong: this.state.songs[1]
+      })
+    }
+    else{
+      this.setState({
+        songs: response.data,
+        currentSong: this.state.songs[this.state.currentSong.id - 2]
+      });
+    }
+    
+    
   }
 
   async createASong() {
@@ -119,7 +130,7 @@ class App extends Component {
         <div className="App-grid">
           <MusicTable songs={this.state.songs} getASong={this.getASong}/>
           <div className="App-middle-fr">
-            <AlbumCover currentSong={this.state.currentSong} />
+            <AlbumCover currentSong={this.state.currentSong} deleteASong={this.deleteASong}/>
             <MusicControls
               goToNextTrack={this.goToNextTrack}
               goToPreviousTrack={this.goToPreviousTrack}

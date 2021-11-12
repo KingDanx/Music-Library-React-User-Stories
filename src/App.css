@@ -82,6 +82,40 @@ p{
   justify-items: center;
 }
 
+.App-album-add-delete{
+  mix-blend-mode: multiply;
+  opacity: .9;
+}
+
+.App-album-thumbdown{
+  height: 100px;
+  width: 100px;
+}
+
+.App-popup-delete{
+  display: grid;
+  justify-items: center;
+  margin-top: 18em;
+  margin-left: 36%;
+}
+
+.btn-check:focus + .btn-primary, .btn-primary:focus {
+  color: #fff;
+  background-color: #464a4e00;
+  border-color: #0a58ca00;
+  box-shadow: 0 0 0 0.25rem rgb(49 132 253 / 0%);
+}
+
+.App-popup-comfirm{
+  background-color: #9c9b34!important;
+  color: #dfdfdf!important;
+
+}
+
+.App-popup-text-bold{
+  font-weight: bolder;
+}
+
 .App-song-name{
   font-size: 2rem;
 }
@@ -118,6 +152,26 @@ p{
   border-top: 30px solid transparent;
   border-bottom: 30px solid transparent; 
   border-left: 50px solid #f4f1369a;
+}
+
+.modal-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  pointer-events: auto;
+  background-color: #475169fc;
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 0.3rem;
+  outline: 0;
+  color: #b9b9b9;
+}
+
+.x-button-popup {
+  border-radius: 20%;
+  background-color: #9c9b34;
+  color: #dfdfdf;
 }
 
 .fast-forward-grid{
