@@ -82,11 +82,6 @@ p{
   justify-items: center;
 }
 
-.App-album-add-delete{
-  mix-blend-mode: multiply;
-  opacity: .9;
-}
-
 .App-album-thumbdown{
   height: 100px;
   width: 100px;
@@ -195,6 +190,25 @@ p{
     border-right:40px solid #f4f1369a; 
 }
 
+.App-album-add-delete {
+  opacity: .9;
+  display: grid;
+  font-size: 121px;
+  padding-top: 10px;
+  margin-top: 2px;
+  width: 100px;
+  height: 100px;
+  background-color: #333333;
+  border-radius: 50%;
+  justify-items: center;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+}
+
+.App-album-add-delete:hover{
+  color: #9c913f!important;
+}
 
 .App-buttons{
   border: none;
