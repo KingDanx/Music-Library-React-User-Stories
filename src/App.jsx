@@ -62,6 +62,10 @@ class App extends Component {
   }
 
   async deleteASong() {
+    if(this.state.currentSong.artist === "Artist" && this.state.currentSong.releaseDate === "Release Date"){
+      alert("Please select a song.");
+      return;
+    }
     let response = await axios.delete(
       `http://localhost:5000/api/songs/${this.state.currentSong.id}`
     );
