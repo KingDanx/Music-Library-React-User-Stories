@@ -123,6 +123,14 @@ p{
   margin-top: 13px;
 }
 
+.App-little-circle-img {
+  margin-top: 0px;
+  width: 100px;
+  height: 100px;
+  filter: brightness(.7);
+}
+
+
 .App-controls {
   border-radius: 500px;
   display: grid;
@@ -208,6 +216,7 @@ p{
 
 .App-album-add-delete:hover{
   color: #9c913f!important;
+
 }
 
 .App-buttons{

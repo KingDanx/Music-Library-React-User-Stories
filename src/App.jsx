@@ -12,8 +12,9 @@ import SearchBox from "./components/SearchBox/SearchBox";
 class App extends Component {
   constructor(props) {
     super(props);
-    this.getASong = this.getASong.bind(this);
     this.deleteASong = this.deleteASong.bind(this);
+    this.createASong = this.createASong.bind(this);
+    this.getASong = this.getASong.bind(this);
     this.state = {
       songs: [],
       currentSong: {
@@ -23,12 +24,30 @@ class App extends Component {
         genre: "Genre",
         releaseDate: "Release Date",
       },
-      userInput:""
+      userInput:"",
+      addedSong: {
+        a: "b"
+      },
+      updatedSong:{
+        a: "b"
+      }
     };
   }
 
   componentDidMount() {
     this.getAllSongs();
+  }
+
+  componentDidUpdate(prevState){
+    // debugger
+    // if(this.state.addedSong != {} || this.state.updatedSong != {}){
+    //   if(this.state.addedSong != prevState.addedSong){
+    //     this.getAllSongs();
+    //   }
+    //   if(this.state.updatedSong != prevState.updatedSong){
+    //     this.getAllSongs();
+    //   }
+    // }
   }
 
   async getAllSongs() {
@@ -50,7 +69,18 @@ class App extends Component {
       currentSong: response.data,
     });
   }
-  
+
+  async createASong(song) {
+    let response = await axios.post(
+      "http://localhost:5000/api/songs", song
+    );
+    console.log(response.data);
+    this.setState({
+      currentSong: response.data,
+    });
+    this.getAllSongs();
+  }
+
   async editASong(id) {
     let response = await axios.put(
       `http://localhost:5000/api/songs/${id}`
@@ -82,18 +112,6 @@ class App extends Component {
         currentSong: this.state.songs[this.state.currentSong.id - 2]
       });
     }
-    
-    
-  }
-
-  async createASong() {
-    let response = await axios.post(
-      "http://localhost:5000/api/songs"
-    );
-    console.log(response.data);
-    this.setState({
-      songs: response.data,
-    });
   }
 
   goToNextTrack = () => {
@@ -126,6 +144,8 @@ class App extends Component {
     });
   };
 
+  
+
 
   render() {
     return (
@@ -134,7 +154,7 @@ class App extends Component {
         <div className="App-grid">
           <MusicTable songs={this.state.songs} getASong={this.getASong}/>
           <div className="App-middle-fr">
-            <AlbumCover currentSong={this.state.currentSong} deleteASong={this.deleteASong}/>
+            <AlbumCover deleteASong={this.deleteASong} createASong={this.createASong} currentSong={this.state.currentSong}/>
             <MusicControls
               goToNextTrack={this.goToNextTrack}
               goToPreviousTrack={this.goToPreviousTrack}
