@@ -15,6 +15,14 @@ class AlbumCover extends Component {
       releaseDate: "",
     };
   }
+  
+  openModal = () => {
+    document.getElementById("createButton").removeAttribute("data-dismiss");
+  }
+
+  closeModal = () => {
+    document.getElementById("createButton").setAttribute("data-dismiss", "modal");
+  }
 
   handleFormChange = (event) => {
     console.log(event);
@@ -24,13 +32,14 @@ class AlbumCover extends Component {
   };
 
   handleSubbmit = (event) => {
-    // event.preventDefault();
+    event.preventDefault();
     this.props.createASong(this.state);
   };
 
   handleEditSubmit = (event) => {
-    // event.preventDefault();
+    event.preventDefault();
     if(event.target.title == "" || event.target.artist == "" || event.target.album == "" || event.target.genre == "" || event.target.releaseDate == ""){
+      alert("please fill all fields");
       this.setState({
         [event.target.name]: event.target.placeholder,
       });   
@@ -69,6 +78,7 @@ class AlbumCover extends Component {
                 className="btn btn-primary"
                 data-toggle="modal"
                 data-target="#editASongModal"
+                onClick={this.openModal}
               >
                 <img src={edit} alt="edit" className="App-little-circle-img" />
               </button>
@@ -80,6 +90,7 @@ class AlbumCover extends Component {
                 style={{ display: "contents" }}
                 data-toggle="modal"
                 data-target="#addASongModal"
+                onClick={this.openModal}
               >
                 +
               </button>
@@ -172,6 +183,7 @@ class AlbumCover extends Component {
                   <div className="form-group">
                     <label for="title">Title</label>
                     <input
+                      id="add"
                       type="text"
                       className="form-control"
                       id="title"
@@ -236,6 +248,7 @@ class AlbumCover extends Component {
                     id="createButton"
                     type="submit"
                     className="btn btn-primary App-popup-comfirm"
+                    onClick={this.closeModal}
                   >
                     Submit
                   </button>
@@ -271,7 +284,7 @@ class AlbumCover extends Component {
                 </button>
               </div>
               <div className="modal-body">
-                <form onSubmit={this.handleEditSubmit}>
+                <form onSubmit={this.handleEditSubmit} id="edit">
                   <div className="form-group">
                     <label for="title">Title</label>
                     <input
@@ -339,6 +352,7 @@ class AlbumCover extends Component {
                     id="createButton"
                     type="submit"
                     className="btn btn-primary App-popup-comfirm"
+                    onClick={this.closeModal}
                   >
                     Submit
                   </button>
