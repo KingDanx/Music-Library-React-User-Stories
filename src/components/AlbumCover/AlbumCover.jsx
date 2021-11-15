@@ -24,12 +24,12 @@ class AlbumCover extends Component {
   };
 
   handleSubbmit = (event) => {
-    event.preventDefault();
+    // event.preventDefault();
     this.props.createASong(this.state);
   };
 
   handleEditSubmit = (event) => {
-    event.preventDefault();
+    // event.preventDefault();
     if(event.target.title == "" || event.target.artist == "" || event.target.album == "" || event.target.genre == "" || event.target.releaseDate == ""){
       this.setState({
         [event.target.name]: event.target.placeholder,
