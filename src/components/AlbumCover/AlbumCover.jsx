@@ -20,13 +20,24 @@ class AlbumCover extends Component {
     console.log(event);
     this.setState({
       [event.target.name]: event.target.value,
-    });
+    });   
   };
 
   handleSubbmit = (event) => {
     event.preventDefault();
     this.props.createASong(this.state);
   };
+
+  handleEditSubmit = (event) => {
+    event.preventDefault();
+    if(event.target.title == "" || event.target.artist == "" || event.target.album == "" || event.target.genre == "" || event.target.releaseDate == ""){
+      this.setState({
+        [event.target.name]: event.target.placeholder,
+      });   
+    }
+  
+    this.props.editASong(this.props.currentSong.id, this.state);
+  }
 
   render() {
     return (
@@ -246,7 +257,7 @@ class AlbumCover extends Component {
             <div className="modal-content">
               <div className="modal-header">
                 <h5 className="modal-title" id="exampleModalLongTitle">
-                  Enter new song information:
+                  Edit song information:
                 </h5>
                 <button
                   type="button"
@@ -260,7 +271,7 @@ class AlbumCover extends Component {
                 </button>
               </div>
               <div className="modal-body">
-                <form onSubmit={this.handleSubbmit}>
+                <form onSubmit={this.handleEditSubmit}>
                   <div className="form-group">
                     <label for="title">Title</label>
                     <input
@@ -268,8 +279,8 @@ class AlbumCover extends Component {
                       className="form-control"
                       id="title"
                       aria-describedby="emailHelp"
-                      placeholder="Enter Song Title"
                       name="title"
+                      placeholder={this.props.currentSong.title}
                       onChange={this.handleFormChange}
                       value={this.state.title}
                     />
@@ -280,7 +291,7 @@ class AlbumCover extends Component {
                       type="text"
                       className="form-control"
                       id="artist"
-                      placeholder="Enter the song's Artist"
+                      placeholder={this.props.currentSong.artist}
                       name="artist"
                       onChange={this.handleFormChange}
                       value={this.state.artist}
@@ -293,7 +304,7 @@ class AlbumCover extends Component {
                       className="form-control"
                       id="album"
                       aria-describedby="emailHelp"
-                      placeholder="Enter the Album"
+                      placeholder={this.props.currentSong.album}
                       name="album"
                       onChange={this.handleFormChange}
                       value={this.state.album}
@@ -305,7 +316,7 @@ class AlbumCover extends Component {
                       type="text"
                       className="form-control"
                       id="genre"
-                      placeholder="Enter the genre"
+                      placeholder={this.props.currentSong.genre}
                       name="genre"
                       onChange={this.handleFormChange}
                       value={this.state.genre}
@@ -314,10 +325,10 @@ class AlbumCover extends Component {
                   <div className="form-group">
                     <label for="releaseDate">Release Date</label>
                     <input
-                      type="date"
+                      type="text"
                       className="form-control"
                       id="releaseDate"
-                      placeholder="Enter the release date"
+                      placeholder={this.props.currentSong.releaseDate}
                       name="releaseDate"
                       onChange={this.handleFormChange}
                       value={this.state.releaseDate}
