@@ -16,12 +16,19 @@ class AlbumCover extends Component {
     };
   }
   
+  refresh = () => {
+    // re-renders the component
+    this.setState({});
+  };
+  
   openModal = () => {
     document.getElementById("createButton").removeAttribute("data-dismiss");
+    document.getElementById("editButton").removeAttribute("data-dismiss");
   }
 
   closeModal = () => {
     document.getElementById("createButton").setAttribute("data-dismiss", "modal");
+    document.getElementById("editButton").setAttribute("data-dismiss", "modal");
   }
 
   handleFormChange = (event) => {
@@ -349,7 +356,7 @@ class AlbumCover extends Component {
                   </div>
                   <div className="form-check"></div>
                   <button
-                    id="createButton"
+                    id="editButton"
                     type="submit"
                     className="btn btn-primary App-popup-comfirm"
                     onClick={this.closeModal}
